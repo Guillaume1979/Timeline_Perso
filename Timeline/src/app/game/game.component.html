@@ -1,0 +1,36 @@
+<main>
+  <div class="form-game">
+    <form [formGroup]="yearForm" (keyup.enter)="onSubmit(yearForm.value)">
+      <label for="date">Saisissez la date à deviner :</label>
+      <input [ngClass]="{'year-entry-false': testYear === false}" id="date" type="number" formControlName="year">
+    </form>
+    <button id="guess-button" (click)="onSubmit(yearForm.value)">Deviner</button>
+  </div>
+
+
+  <h1>Carte à deviner</h1>
+  <div class="guessCard">
+    <div class="card" *ngIf="cardDeck.length !== 0">
+      <p>{{drawCard.name}}</p>
+      <img alt="une image" [src]=drawCard.imageUrl >
+      <p>{{drawCard.description}}</p>
+    </div>
+    <div class="winSection" *ngIf="cardDeck.length === 0">
+      <p class="win-message" >Vous avez fini la partie. Bravo !!!</p>
+      <button (click)="ngOnInit()">Rejouer</button>
+    </div>
+  </div>
+
+
+  <h1>Cartes trouvées</h1>
+
+  <div class="foundCards">
+    <div class="card" *ngFor="let image of foundCard">
+      <p>{{image.name}}</p>
+      <p class="dateOnCard">{{image.date | date:'y'}}</p>
+      <img [src]=image.imageUrl>
+      <p>{{image.description}}</p>
+    </div>
+  </div>
+
+</main>

@@ -1,0 +1,20 @@
+<h3>Jeu à éditer :</h3>
+
+
+  <input name="name" [(ngModel)]="gameToEdit.name" (keyup.enter)="onSubmit()">
+  <!--<p>{{gameToEdit.name}}</p>--> <!--pour tester que l'attribut change bien-->
+
+  <div class="cardList" *ngFor="let card of gameToEdit.cardList, index as cardId">
+    {{cardId+1}})
+    <label for="name">Nom de la carte n°{{cardId}} : </label>
+    <input id="name" name="{{cardId}}+card" [(ngModel)]="gameToEdit.cardList[cardId].name">
+    <button>X</button>
+    <!--{{gameToEdit.cardList[cardId] | json}}--> <!--pour vérifier le contenu de la table-->
+  </div>
+
+  <div>
+    <p></p>
+    <button (click)="onSubmit()">Soumetttre les changements</button>
+  </div>
+
+

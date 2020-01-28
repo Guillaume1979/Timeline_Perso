@@ -1,0 +1,36 @@
+<main>
+  <button class="pink-button" type="submit">Ajouter un timeline</button>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Catégorie</th>
+      <th>Date de création</th>
+      <th>Date de mise à jour</th>
+      <th>Nombre de cartes</th>
+      <th>Editer ?</th>
+      <th>Jouer !</th>
+      <th>Supprimer ?</th>
+    </tr>
+    <tr *ngFor="let game of gamesList , index as gameId">
+      <td>{{game.id}}</td>
+      <td>{{game.name}}</td>
+      <td>{{game.category}}</td>
+      <td>{{game.creationDate | date: 'shortDate'}}</td>
+      <td>{{game.updateDate | date:'short'}}</td>
+      <td>{{countCard(game.id)}}</td>
+      <td>
+        <button [routerLink]="['/editing', gameId]">Editer</button>
+      </td>
+      <td>
+        <button [routerLink]="['/game', gameId]">Jouer</button>
+      </td>
+      <td>
+        <button (click)="deleteGame(gameId)">X</button>
+      </td>
+    </tr>
+
+
+  </table>
+
+</main>

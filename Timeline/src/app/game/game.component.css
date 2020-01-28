@@ -1,0 +1,60 @@
+label {
+  padding-right: 10px;
+}
+
+img {
+  height: 40%;
+  width: 50%;
+  border: solid 15px blue;
+  border-radius: 5%;
+  padding: 10px;
+  margin: 10px;
+}
+
+.foundCards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.guessCard {
+  height: 380px;
+}
+
+.win-message {
+  font-size: xx-large;
+}
+
+.winSection {
+  text-align: center;
+}
+
+.dateOnCard {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 1px;
+  border-radius: 2%;
+  background-color: darkgray;
+  min-height: 380px;
+  width: 300px;
+  margin: 5px 20px;
+  padding: 0px 5px;
+}
+
+.year-entry-false {
+  color: red;
+}
+
+.form-game {
+  display: flex;
+}
+
+p {
+  text-align: center;
+}
